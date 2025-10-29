@@ -1,17 +1,27 @@
 {
     "name": "Gracious Fast Food",
     "short_name": "GFF",
-    "description": "Gracious Fast Food - Felele, Lokoja",
-    "start_url": "/gracious/",
+    "description": "Gracious Fast Food - Felele, Lokoja. Serving delicious meals daily from 7:30 AM",
+    "start_url": "https://meriniire.github.io/gracious/",
     "display": "standalone",
     "background_color": "#003366",
     "theme_color": "#FF6B35",
-    "scope": "/gracious/",
+    "orientation": "portrait-primary",
+    "scope": "https://meriniire.github.io/gracious/",
+    "categories": ["food", "restaurant"],
+    "lang": "en",
     "icons": [
         {
-            "src": "logo.png",
+            "src": "https://meriniire.github.io/gracious/logo.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "https://meriniire.github.io/gracious/logo.png",
+            "sizes": "512x512", 
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
