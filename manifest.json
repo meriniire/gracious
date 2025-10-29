@@ -6,8 +6,10 @@
     "display": "standalone",
     "background_color": "#003366",
     "theme_color": "#FF6B35",
+    "orientation": "portrait-primary",
     "scope": "https://meriniire.github.io/gracious/",
-    "orientation": "portrait",
+    "categories": ["food", "restaurant"],
+    "lang": "en",
     "icons": [
         {
             "src": "https://meriniire.github.io/gracious/logo.png",
@@ -17,10 +19,9 @@
         },
         {
             "src": "https://meriniire.github.io/gracious/logo.png",
-            "sizes": "512x512",
+            "sizes": "512x512", 
             "type": "image/png",
             "purpose": "any maskable"
         }
-    ],
-    "categories": ["food", "restaurant"]
+    ]
 }
