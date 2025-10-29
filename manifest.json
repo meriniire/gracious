@@ -1,16 +1,27 @@
 {
     "name": "Gracious Fast Food",
     "short_name": "GFF",
-    "description": "Gracious Fast Food - Felele, Lokoja",
+    "description": "Gracious Fast Food - Felele, Lokoja. Serving delicious meals daily from 7:30 AM",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#003366",
     "theme_color": "#FF6B35",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "categories": ["food", "restaurant"],
+    "lang": "en",
     "icons": [
         {
             "src": "logo.png",
             "sizes": "192x192",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "logo.png",
+            "sizes": "512x512", 
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
