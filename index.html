@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRACIOUS FAST FOOD - Felele, Lokoja</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.png" alt="GFF Logo" class="logo">
+        </div>
+        <h1>GRACIOUS FAST FOOD</h1>
+        <p class="subtitle">GFF, Felele, Lokoja</p>
+        <div class="welcome-badge">
+            🎯 Ready to Serve You Excellence!
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Operating Hours -->
+        <section class="card">
+            <div class="card-header">
+                <span class="icon">🕐</span>
+                <h2>Operating Hours</h2>
+            </div>
+            <p>We start serving delicious meals from <strong>7:30 AM Daily</strong></p>
+            <p><strong>Open Monday - Sunday</strong></p>
+            
+            <div class="food-times">
+                <h3>🍽️ Food Ready Times:</h3>
+                <div class="time-chips">
+                    <span class="time-chip">7:30 AM</span>
+                    <span class="time-chip">10:00 AM</span>
+                    <span class="time-chip">12:30 PM</span>
+                    <span class="time-chip">2:00 PM</span>
+                    <span class="time-chip">3:30 PM</span>
+                    <span class="time-chip">4:00 PM</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location -->
+        <section class="card">
+            <div class="card-header">
+                <span class="icon">📍</span>
+                <h2>Our Location</h2>
+            </div>
+            <div class="location-card">
+                <div class="location-icon">🏪</div>
+                <h3>Gracious Fast Food (GFF)</h3>
+                <p class="location-detail">📍 Beside Overcomers Church, Agbaja Road</p>
+                <p class="location-detail">📍 Felele, Lokoja, Kogi State</p>
+                <p class="location-tip">📍 Easy to find location</p>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-orange" onclick="openDirections()">
+                    🗺️ Get Directions
+                </button>
+                <button class="btn btn-green" onclick="callRestaurant()">
+                    📞 Call Now
+                </button>
+            </div>
+            
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <p>Tip: Use "Get Directions" to open Google Maps for easy navigation to our restaurant!</p>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="card">
+            <div class="card-header">
+                <span class="icon">📞</span>
+                <h2>Contact Us</h2>
+            </div>
+            <p>📞 Ready to take your order! Call us now or message on WhatsApp</p>
+            <div class="phone-display">
+                <strong>📞 +234 706 807 1343</strong>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-green" onclick="callRestaurant()">
+                    📞 Call Now
+                </button>
+                <button class="btn btn-whatsapp" onclick="openWhatsApp()">
+                    💬 WhatsApp
+                </button>
+            </div>
+            
+            <div class="pro-tip">
+                <strong>💡 Pro Tip:</strong> Call ahead to place your order for quick pickup! Save time and enjoy your meal faster.
+            </div>
+        </section>
+
+        <!-- Notification Section -->
+        <section class="card notification-card">
+            <div class="card-header">
+                <span class="icon">🔔</span>
+                <h2>Food Notifications</h2>
+            </div>
+            <div class="notification-status" id="notification-status">
+                <span class="status-icon">🔔</span>
+                <p>Setting up food notifications...</p>
+            </div>
+            
+            <div class="button-group">
+                <button class="btn btn-blue" onclick="foodNotifier.testNotification()">
+                    🔔 Test Notification
+                </button>
+            </div>
+            
+            <div class="notification-info">
+                <h4>How it works:</h4>
+                <ul>
+                    <li>✅ Click "Test Notification" to enable alerts</li>
+                    <li>✅ You'll get automatic alerts when food is ready</li>
+                    <li>✅ Works even when browser is closed</li>
+                    <li>✅ Free service - no app needed</li>
+                </ul>
+                
+                <div class="food-schedule">
+                    <h4>🕐 Food Ready Times:</h4>
+                    <div class="schedule-times">
+                        <span>7:30 AM</span>
+                        <span>10:00 AM</span>
+                        <span>12:30 PM</span>
+                        <span>2:00 PM</span>
+                        <span>3:30 PM</span>
+                        <span>4:00 PM</span>
+                        <span>5:30 PM</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h3>GRACIOUS FAST FOOD</h3>
+        <p>Felele, Lokoja • Serving Excellence Daily</p>
+        <p class="contact-footer">📞 Call us: +234 706 807 1343</p>
+        <p class="copyright">© 2024 GFF. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
