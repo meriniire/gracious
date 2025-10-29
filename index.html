@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRACIOUS FAST FOOD - Felele, Lokoja</title>
     
-    <!-- PWA REQUIREMENTS - ADD THESE LINES -->
-    <link rel="manifest" href="manifest.json">
+    <!-- PWA REQUIREMENTS - UPDATED WITH FULL URL -->
+    <link rel="manifest" href="https://meriniire.github.io/gracious/manifest.json">
     <meta name="theme-color" content="#FF6B35">
     <meta name="description" content="Gracious Fast Food - Felele, Lokoja. Serving delicious meals daily from 7:30 AM">
     
-    <!-- iOS PWA Support -->
+    <!-- iOS PWA Support - UPDATED WITH FULL URL -->
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gracious Fast Food">
-    <link rel="apple-touch-icon" href="logo.png">
+    <link rel="apple-touch-icon" href="https://meriniire.github.io/gracious/logo.png">
+    
+    <!-- Additional PWA Meta Tags -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="GFF">
+    <meta name="msapplication-TileColor" content="#FF6B35">
+    <meta name="msapplication-TileImage" content="https://meriniire.github.io/gracious/logo.png">
     
     <!-- Existing CSS -->
     <link rel="stylesheet" href="style.css">
@@ -24,7 +30,7 @@
     <!-- Header Section -->
     <header class="header">
         <div class="logo-container">
-            <img src="logo.png" alt="GFF Logo" class="logo">
+            <img src="https://meriniire.github.io/gracious/logo.png" alt="GFF Logo" class="logo">
         </div>
         <h1>GRACIOUS FAST FOOD</h1>
         <p class="subtitle">GFF - No. 1 Agbaja road, beside overcommers church, Felele, Lokoja, Kogi State</p>
@@ -161,6 +167,21 @@
         <p class="contact-footer">📞 Call us: +234 706 807 1343</p>
         <p class="copyright">© 2024 GFF. All rights reserved.</p>
     </footer>
+
+    <!-- Service Worker Registration -->
+    <script>
+        // Register service worker for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('https://meriniire.github.io/gracious/sw.js')
+                    .then(function(registration) {
+                        console.log('ServiceWorker registration successful');
+                    }, function(err) {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
