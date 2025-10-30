@@ -2,29 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>GRACIOUS FAST FOOD - Felele, Lokoja</title>
     
-    <!-- PWA REQUIREMENTS - UPDATED WITH FULL URL -->
+    <!-- PWA REQUIREMENTS - ENHANCED FOR FULL SCREEN -->
     <link rel="manifest" href="https://meriniire.github.io/gracious/manifest.json">
     <meta name="theme-color" content="#FF6B35">
     <meta name="description" content="Gracious Fast Food - Felele, Lokoja. Serving delicious meals daily from 7:30 AM">
     
-    <!-- iOS PWA Support - UPDATED WITH FULL URL -->
+    <!-- Enhanced iOS PWA Support -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Gracious Fast Food">
     <link rel="apple-touch-icon" href="https://meriniire.github.io/gracious/logo.png">
+    <meta name="apple-mobile-web-app-orientations" content="portrait">
     
-    <!-- Additional PWA Meta Tags -->
+    <!-- Enhanced Android PWA Support -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="GFF">
     <meta name="msapplication-TileColor" content="#FF6B35">
     <meta name="msapplication-TileImage" content="https://meriniire.github.io/gracious/logo.png">
     
+    <!-- Prevent browser UI elements -->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    
     <!-- Existing CSS -->
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Prevent address bar showing on mobile */
+        html, body {
+            height: 100%;
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+        }
+        
+        /* Hide browser navigation when in standalone */
+        @media all and (display-mode: standalone) {
+            body {
+                -webkit-user-select: none;
+                -webkit-touch-callout: none;
+                -webkit-tap-highlight-color: transparent;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
@@ -168,19 +192,41 @@
         <p class="copyright">© 2024 GFF. All rights reserved.</p>
     </footer>
 
-    <!-- Service Worker Registration -->
+    <!-- Enhanced Service Worker Registration -->
     <script>
-        // Register service worker for PWA
+        // Enhanced service worker for full-screen PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
                 navigator.serviceWorker.register('https://meriniire.github.io/gracious/sw.js')
                     .then(function(registration) {
-                        console.log('ServiceWorker registration successful');
-                    }, function(err) {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                        
+                        // Force PWA to open in standalone mode
+                        if (window.matchMedia('(display-mode: standalone)').matches) {
+                            console.log('Running in standalone mode');
+                        }
+                    })
+                    .catch(function(err) {
                         console.log('ServiceWorker registration failed: ', err);
                     });
             });
         }
+
+        // Prevent default browser behaviors
+        document.addEventListener('touchmove', function(e) {
+            if (e.scale !== 1) { e.preventDefault(); }
+        }, { passive: false });
+
+        document.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+
+        // Force standalone mode detection
+        window.addEventListener('load', function() {
+            if (navigator.standalone) {
+                document.body.classList.add('standalone');
+            }
+        });
     </script>
 
     <script src="script.js"></script>
